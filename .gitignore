@@ -1,0 +1,22 @@
+# Ignore Node.js related files and directories
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Ignore environment files (e.g., .env, .env.local, .env.development, .env.test, .env.production)
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+
+# Ignore logs and other generated files
+*.log
+*.pid
+*.lock
+*.seed
+*.log.*
+*.swap
+*~
