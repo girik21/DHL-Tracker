@@ -22,10 +22,9 @@ npm install
 npm i express
 npm i nodemon --save-dev
 npm i axios
-npm i dotenv  Note: Proper way to import dotenv is ` "import * as dotenv from "dotenv"
+npm i dotenv  Note: Proper way to import dotenv is ` "import * as dotenv from "dotenv" `
 npm i winston
 npm i luxon 
-` 
 
 # Initialize a .env file to securely store your API keys  for secure access . Use the dotenv package for this.
 API_KEY = "ENTER_YOUR_KEY"
