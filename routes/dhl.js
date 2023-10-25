@@ -1,7 +1,11 @@
 import express from "express";
 import { tracker } from "../controllers/trackControl.js";
+import { getLoggerInstance } from "../logger.js";
+
 
 export const dhl = express.Router();
+const logger = getLoggerInstance();
+
 
 dhl.post("/", async (req, res) => {
     try {
@@ -36,7 +40,7 @@ dhl.post("/", async (req, res) => {
             trackingEvents
         });
     } catch (error) {
-        console.error(error);
-        res.status(500).send("Error!!!");
+        logger.error(error);
+        res.status(500).send("Error. Cannot Fetch the data ");
     }
 });

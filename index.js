@@ -3,8 +3,10 @@ import https from "https";
 import express from "express";
 import fs from "fs";
 import { dhl } from "./routes/dhl.js";
+import { getLoggerInstance } from "./logger.js";
 
 const app = express();
+const logger = getLoggerInstance();
 
 //import certificates for https validation
 const httpsOptions = {
@@ -22,13 +24,18 @@ const message = `The server is running on https://${localhost}:${port}/`;
 
 // listen to requests using server
 server.listen(port, () => {
-    console.log(message);
+    logger.info(message);
 });
 
 //simple get for hompage
 app.get("/", async (req, res) => {
-    res.send("Welcome to USPS Tracking");
+    res.send("Welcome to DHL Tracking");
 });
 
 app.use(express.json());
 app.use("/dhl", dhl);
+
+// Order Number
+// {
+//     "orderNumber": "1965295301"
+// }
